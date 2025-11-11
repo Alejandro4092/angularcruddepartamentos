@@ -1,0 +1,28 @@
+<div>
+    @if(departamentos.length>0){
+        <h3>No hay departamentos que mostrar</h3>
+  
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Localidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(dept of departamentos;track dept){
+                    <tr>
+                        <td>{{dept.numero}}</td>
+                        <td>{{dept.nombre}}</td>
+                        <td>{{dept.localidad}}</td>
+                    </tr>
+                }
+             
+            </tbody>
+        </table>
+    
+    }
+    </div>
+    
+
