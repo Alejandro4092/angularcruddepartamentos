@@ -8,13 +8,15 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { ServiceDepartamentos } from './services/service.departamento';
 import { CreateComponent } from './components/create.component/create.component';
+import { DetailsComponent } from './components/details.component/details.component';
 
 @NgModule({
   declarations: [
     App,
     DepartamentosComponent,
     MenuComponent,
-    CreateComponent
+    CreateComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
