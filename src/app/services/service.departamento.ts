@@ -7,6 +7,8 @@ import { DepartamentosComponent } from "../components/departamentos.component/de
 @Injectable({ providedIn: 'root' })
 export class ServiceDepartamentos{
     constructor(private _http:HttpClient){}
+
+
     getDepartamentos(): Observable<Array<Departamento>>{
     let request="api/departamentos";
     let url= environment.urlApiDepartamentos+request;
@@ -36,6 +38,11 @@ export class ServiceDepartamentos{
         let request="api/departamentos";
         let url=environment.urlApiDepartamentos+request;
         return this._http.put(url,json,{headers:header});
+    }
+    deleteDepartamento(idDepartamento:number):Observable<any>{
+        let request="api/departamentos/"+idDepartamento;
+        let url=environment.urlApiDepartamentos+request;
+        return this._http.delete(url);
     }
 
 }
