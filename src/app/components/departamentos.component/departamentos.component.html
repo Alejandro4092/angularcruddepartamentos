@@ -17,7 +17,8 @@
                         <td>{{dept.numero}}</td>
                         <td>{{dept.nombre}}</td>
                         <td>{{dept.localidad}}</td>
-                        <td><a [routerLink]="['/details', dept.numero,dept.nombre,dept.localidad]" class="btn btn-dark">Details</a></td>
+                        <td><a [routerLink]="['/details', dept.numero,dept.nombre,dept.localidad]" class="btn btn-dark">Details</a>
+                        <a [routerLink]="['/edit', dept.numero]" class="btn btn-info">Edit</a></td>
                     </tr>
                 }
              

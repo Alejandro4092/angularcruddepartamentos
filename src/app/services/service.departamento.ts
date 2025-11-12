@@ -3,6 +3,7 @@ import { Departamento } from "../models/departamento";
 import { Injectable } from "@angular/core";
 import { HttpClient,HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { DepartamentosComponent } from "../components/departamentos.component/departamentos.component";
 @Injectable({ providedIn: 'root' })
 export class ServiceDepartamentos{
     constructor(private _http:HttpClient){}
@@ -22,6 +23,19 @@ export class ServiceDepartamentos{
         let request="api/departamentos"
         let url=environment.urlApiDepartamentos+request;
         return this._http.post(url,json,{headers:header})
+    }
+    findDepartamento(idDepartamento:number):Observable<Departamento>{
+        let request="api/departamentos/"+idDepartamento;
+        let url=environment.urlApiDepartamentos+request;
+        return this._http.get<Departamento>(url);
+
+    }
+    updateDepartamento(departamento:Departamento):Observable<any>{
+        let json =JSON.stringify(departamento);
+        let header=new HttpHeaders().set("Content-type","application/json");
+        let request="api/departamentos";
+        let url=environment.urlApiDepartamentos+request;
+        return this._http.put(url,json,{headers:header});
     }
 
 }

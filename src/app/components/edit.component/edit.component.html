@@ -1,0 +1,15 @@
+<h1 style="color: blue;">Edit</h1>
+<a [routerLink]="['/']">Back to home</a>
+@if(departamento){
+    <form #editForm="ngForm">
+        <label>Id:</label>
+        <input type="number" name="cajaid" #cajaid value={{departamento.numero}} disabled class="form-control"/>
+        <label>Nombre:</label>
+        <input type="text" name="cajanombre" #cajanombre value={{departamento.nombre}} class="form-control"/>
+        <label>Localidad:</label>
+        <input type="text" name="cajalocalidad" #cajalocalidad value={{departamento.localidad}} class="form-control"/>
+        <button (click)="updateDepartamento()">Update</button>
+    </form>
+}
+
+
